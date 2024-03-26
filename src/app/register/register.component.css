@@ -11,7 +11,10 @@
 #img{
   background:   rgba(203, 203, 203, 0.384);
    }
-   
+
+.imgcss{
+  background: url("../../assets/img/Sign up-cuate (1).png");
+   }
 
 
 .card{

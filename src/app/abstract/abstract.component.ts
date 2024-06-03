@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../_services/login.service';
 
 import { AddAbstractService } from '../_services/add-abstract.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-abstract',
@@ -18,7 +19,7 @@ export class AbstractComponent  implements OnInit{
 
    serverErrorDef=true;
    serverErrorImg=true;
-  constructor(public loginService:LoginService,public addAbstractService:AddAbstractService){}
+  constructor(public loginService:LoginService,public addAbstractService:AddAbstractService,private router:Router){}
 
   ngOnInit(): void {
     this.loginService.canAuthenticate()
@@ -63,7 +64,7 @@ export class AbstractComponent  implements OnInit{
     })
   }
   retry(){
-    window.location.reload()
+ window.history.go(0);
   }
 
 }

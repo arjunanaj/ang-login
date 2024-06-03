@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
   validateUser(){
     this.loginService.validateUser(this.login).subscribe((data)=>{
      
-      if(data.body==" User Logged Sucessfully"){
+      if(data.body!="invalidUser"){
    
      
-        this.loginService.isStroredToken(this.login.emailId)
+        this.loginService.isStroredToken(data.body)
        this.loginService.canAuthenticate()
     
       }else{

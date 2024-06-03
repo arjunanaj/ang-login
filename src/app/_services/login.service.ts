@@ -14,7 +14,7 @@ export class LoginService {
   constructor( private httpclient:HttpClient,private router:Router) { }
 
   public validateUser(login:Login):Observable<HttpResponse<any>>{
-    return this.httpclient.post<any>(`${this.basicUrl}/ValidateUser`,login,{observe:'response',responseType:'text' as 'json'})
+    return this.httpclient.post<any>(`${this.basicUrl}/validateUser`,login,{observe:'response',responseType:'text' as 'json'})
   }
   public getUser(emailId:string):Observable<HttpResponse<any>>{
     return this.httpclient.get<any>(`${this.basicUrl}/getUser?emailId=${emailId}`,{observe:'response',responseType:'text' as 'json'})
@@ -23,7 +23,9 @@ export class LoginService {
     return this.httpclient.put<any>(`${this.basicUrl}/updateUser?emailId=${emailId}`,login,{observe:'response',responseType:'text' as 'json'})
   }
 
-
+  public forgotUser(emailId:string):Observable<HttpResponse<any>>{
+    return this.httpclient.get<any>(`${this.basicUrl}/forgotPassword?emailId=${emailId}`,{observe:'response',responseType:'text' as 'json'})
+  }
   isAuthenticate():boolean{
     if(sessionStorage.getItem("id")!=null){
       return true;

@@ -79,7 +79,6 @@ this.addcomponentService.getComponentDef().subscribe((data)=>{
     })
   }
   retry(){
-    window.location.reload()
-  }
-
+    window.history.go(0);
+     }
 }

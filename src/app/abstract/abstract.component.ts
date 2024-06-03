@@ -64,7 +64,7 @@ export class AbstractComponent  implements OnInit{
     })
   }
   retry(){
- window.history.go(0);
+ document.location.reload()
   }
 
 }
